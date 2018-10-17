@@ -25,8 +25,8 @@ public class Lambda {
 		NumericTest isEven = (n) -> (n % 2) == 0;
 		NumericTest isNegative = (n) -> (n < 0);
 		
-		System.out.println(isEven.computerTest(4));
-		System.out.println(isNegative.computerTest(5));
+		System.out.println("isEven: " + isEven.computerTest(4));
+		System.out.println("isNegative: " + isNegative.computerTest(5));
 		
 		MyGreeting morningGreeting = (String str) -> "Good Morning " + str + "!";
 		MyGreeting nightGreeting = (str) -> "Good Night " + str + "!";
