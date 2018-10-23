@@ -28,11 +28,20 @@ public class GenericsWildcards {
         }
     }
     
+    private static void foo(List<?> i) {
+    	 fooHelper(i);
+    }
+    
+    //Wildcard Helper Methods
+    private static <T> void fooHelper(List<T> l) {
+        l.set(0, l.get(1));
+    }
+    
     public static void main(String[] args) {
-    	//Upper Bounded Wildcards
+
         List<Integer> li = Arrays.asList(1, 2, 3);
         System.out.println("sum = " + sumOfList(li));
-        //Upper Bounded Wildcards
+
         List<Double> ld = Arrays.asList(1.2, 2.3, 3.5);
         System.out.println("sum = " + sumOfList(ld));
         
@@ -41,6 +50,9 @@ public class GenericsWildcards {
         
         List<Integer> li2 = new ArrayList<>();
         addNumbers(li2);
+        printList(li2);
+        
+        foo(li2);
         printList(li2);
     }
 
