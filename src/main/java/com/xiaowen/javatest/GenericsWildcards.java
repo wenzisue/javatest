@@ -1,5 +1,6 @@
 package com.xiaowen.javatest;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -37,6 +38,10 @@ public class GenericsWildcards {
         
         printList(li);
         printList(ld);
+        
+        List<Integer> li2 = new ArrayList<>();
+        addNumbers(li2);
+        printList(li2);
     }
 
 }
