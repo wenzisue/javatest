@@ -13,6 +13,10 @@ public class Box <T> {
     public T get() {
         return t;
     }
+    
+    static Box createBox() {   // warning: Box is a raw type. References to generic type Box<T> should be parameterized
+        return new Box();
+    }
 
     public <U extends Number> void inspect(U u){
         System.out.println("T: " + t.getClass().getName());
@@ -23,6 +27,13 @@ public class Box <T> {
         Box<Integer> integerBox = new Box<Integer>();
         integerBox.set(new Integer(10));
         integerBox.inspect(BigInteger.valueOf(1000000));
+        
+        
+        Box rawBox = new Box();        // rawBox is a raw type of Box<T>
+        Box<Integer> intBox = rawBox;  // warning: unchecked conversion
+        
+        Box<Integer> bi;
+        bi = createBox();              // warning: unchecked conversion
     }
 
 }
