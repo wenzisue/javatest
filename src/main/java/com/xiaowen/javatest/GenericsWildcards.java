@@ -48,7 +48,7 @@ public class GenericsWildcards {
         printList(li);
         printList(ld);
         
-        List<Integer> li2 = new ArrayList<>();
+        List<Integer> li2 = new ArrayList<Integer>();
         addNumbers(li2);
         printList(li2);
         
